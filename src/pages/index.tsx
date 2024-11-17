@@ -1,6 +1,5 @@
 "use client";
 
-import ResumeDownload from "@/_components/ResumeDownload";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -74,7 +73,7 @@ export default function Component() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-gray-900 dark:to-indigo-900 scrollbar-thin scrollbar-thumb-indigo-500 scrollbar-track-indigo-100">
       {/* Header */}
-      <header className="py-4bg-opacity-80 backdrop-filter backdrop-blur-lg fixed top-0 left-0 right-0 z-50">
+      <header className="py-4bg-opacity-80 backdrop-filter backdrop-blur-lg fixed top-0 left-0 right-0 z-50 p-3">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             <motion.h1
@@ -232,7 +231,7 @@ export default function Component() {
       {/* About Section */}
       <Element
         name="about"
-        className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-800"
+        className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-800 p-10"
       >
         <div className="container mx-auto px-4">
           <motion.h2
@@ -271,7 +270,6 @@ export default function Component() {
                 I believe in continuous learning and am always excited to take
                 on new challenges in the ever-evolving world of web development.
               </p>
-              <ResumeDownload />
             </motion.div>
             <motion.div
               className="md:w-1/2"
@@ -286,7 +284,7 @@ export default function Component() {
                   alt="Profile"
                   className="w-full h-full object-cover"
                   height={400}
-                  width={400}
+                  width={300}
                 />
               </div>
             </motion.div>
@@ -297,7 +295,7 @@ export default function Component() {
       {/* Works Section */}
       <Element
         name="works"
-        className="min-h-screen flex items-center justify-center"
+        className="min-h-screen flex items-center justify-center p-10"
       >
         <div className="container mx-auto px-4">
           <motion.h2
@@ -358,7 +356,7 @@ export default function Component() {
       {/* Skills Section */}
       <Element
         name="skills"
-        className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-800"
+        className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-800 p-10"
       >
         <div className="container mx-auto px-4">
           <motion.h2
@@ -420,7 +418,7 @@ export default function Component() {
       {/* Contact Section */}
       <Element
         name="contact"
-        className="min-h-screen flex items-center justify-center"
+        className="min-h-screen flex items-center justify-center p-10"
       >
         <div className="container mx-auto px-4">
           <motion.h2
