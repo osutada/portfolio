@@ -13,7 +13,6 @@ const PDFDownloadLink = dynamic(
   { ssr: false }
 );
 
-import { Button } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import { FiDownload } from "react-icons/fi";
 
@@ -300,7 +299,12 @@ const MyDocument = () => (
 export default function ResumeDownload() {
   return (
     <PDFDownloadLink document={<MyDocument />} fileName="resume1.pdf">
-      <Button disabled={false} leftIcon={<FiDownload />}></Button>
+      <button
+        className="flex items-center px-4 py-2 bg-blue-500 text-white rounded"
+        disabled={false}
+      >
+        <FiDownload className="mr-2" />
+      </button>
     </PDFDownloadLink>
   );
 }

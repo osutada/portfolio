@@ -1,5 +1,6 @@
 "use client";
 
+import ResumeDownload from "@/_components/ResumeDownload";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -270,6 +271,7 @@ export default function Component() {
                 I believe in continuous learning and am always excited to take
                 on new challenges in the ever-evolving world of web development.
               </p>
+              <ResumeDownload />
             </motion.div>
             <motion.div
               className="md:w-1/2"
