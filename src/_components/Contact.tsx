@@ -13,30 +13,24 @@ export default function Contact() {
 
     const formData = new FormData(e.currentTarget);
 
-    const webhookUrl =
-      "https://script.google.com/macros/s/AKfycbxZrD9b2XBB6qEZZfgCM4e7rs8lzqtYDKdxj6FkBNqa1gsOc5UzUIxQJPTXVl4mBGq-/exec";
+    const url =
+      "https://docs.google.com/forms/u/0/d/e/1FAIpQLScIvzbA5jZUSnQXs9jm0RJ9UJboVQCTLB2jystNqtzwRwYmtQ/formResponse";
 
-    const data = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      message: formData.get("message"),
-    };
+    // Map your form fields to Google Form field names
+    const googleFormData = new FormData();
+    googleFormData.append("entry.239822804", formData.get("name") as string);
+    googleFormData.append("entry.1578697554", formData.get("email") as string);
+    googleFormData.append("entry.945498449", formData.get("message") as string);
 
     try {
-      const response = await fetch(webhookUrl, {
+      // Using fetch with no-cors mode as Google Forms doesn't support CORS
+      await fetch(url, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-        mode: "cors", // CORSリクエストを許可
+        mode: "no-cors",
+        body: googleFormData,
       });
 
-      if (response.ok) {
-        setSubmitted(true);
-      } else {
-        console.error("Error submitting form:", response);
-      }
+      setSubmitted(true);
     } catch (error) {
       console.error("Error submitting form:", error);
     } finally {
