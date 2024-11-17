@@ -20,7 +20,7 @@ export default function Component() {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
+      if (window.scrollY > 300) {
         setShowScrollTop(true);
       } else {
         setShowScrollTop(false);
@@ -72,13 +72,13 @@ export default function Component() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-gray-900 dark:to-indigo-900 scrollbar-thin scrollbar-thumb-indigo-500 scrollbar-track-indigo-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
       {/* Header */}
-      <header className="py-4bg-opacity-80 backdrop-filter backdrop-blur-lg fixed top-0 left-0 right-0 z-50 p-3">
+      <header className="py-4 bg-opacity-80 backdrop-filter backdrop-blur-lg fixed top-0 left-0 right-0 z-50 p-3 shadow-sm">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             <motion.h1
-              className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-indigo-500"
+              className="text-3xl font-bold text-gray-800 dark:text-gray-200"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -92,7 +92,7 @@ export default function Component() {
                   to={item}
                   smooth={true}
                   duration={500}
-                  className="cursor-pointer hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                  className="cursor-pointer hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
                 >
                   <motion.span
                     initial={{ opacity: 0, y: -20 }}
@@ -105,7 +105,7 @@ export default function Component() {
               ))}
             </nav>
             <motion.button
-              className="md:hidden text-2xl"
+              className="md:hidden text-2xl text-gray-800 dark:text-gray-200"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
               initial={{ opacity: 0, scale: 0 }}
@@ -121,7 +121,7 @@ export default function Component() {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <motion.div
-          className="md:hidden bg-white dark:bg-gray-800 py-2 fixed top-16 left-0 right-0 z-40"
+          className="md:hidden bg-white dark:bg-gray-800 py-2 fixed top-16 left-0 right-0 z-40 shadow-md"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
@@ -135,7 +135,7 @@ export default function Component() {
                   to={item}
                   smooth={true}
                   duration={500}
-                  className="cursor-pointer hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                  className="cursor-pointer hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <motion.span
@@ -159,16 +159,16 @@ export default function Component() {
       >
         <div className="container mx-auto px-4 text-center z-10">
           <motion.h2
-            className="text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-indigo-500"
+            className="text-6xl tracking-wide font-bold mb-4 text-gray-800 dark:text-gray-200"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            Welcome to My Portfolio
+            Osutada&apos;s Portfolio
           </motion.h2>
           <motion.p
-            className="text-xl mb-8"
+            className="text-xl mb-8 text-gray-600 dark:text-gray-400"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -178,22 +178,11 @@ export default function Component() {
           </motion.p>
           <ScrollLink to="about" smooth={true} duration={500}>
             <motion.button
-              className="bg-indigo-600 text-white py-2 px-6 rounded-full hover:bg-indigo-700 transition-colors"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              className="bg-gray-800 text-white py-2 px-6 rounded-full hover:bg-gray-700 transition-colors"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              animate={{
-                y: [0, -10, 0],
-                transition: {
-                  duration: 1.5,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  ease: "easeInOut",
-                },
-              }}
             >
               Learn More
             </motion.button>
@@ -208,7 +197,7 @@ export default function Component() {
           {[...Array(50)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute bg-indigo-500 rounded-full"
+              className="absolute bg-gray-300 dark:bg-gray-600 rounded-full"
               style={{
                 width: Math.random() * 10 + 5,
                 height: Math.random() * 10 + 5,
@@ -232,11 +221,11 @@ export default function Component() {
       {/* About Section */}
       <Element
         name="about"
-        className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-800 p-10"
+        className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900 p-10"
       >
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-5xl text-center mb-16 font-light bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-indigo-500"
+            className="text-5xl text-center mb-16 font-light text-gray-800 dark:text-gray-200"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -252,24 +241,25 @@ export default function Component() {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-3xl font-semibold mb-4">
-                Hi, Im [Your Name]
+              <h3 className="text-3xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
+                Hi, I&apos;m [Your Name]
               </h3>
-              <p className="text-lg mb-4">
-                Im a passionate web developer with expertise in modern frontend
-                technologies. With a keen eye for design and a love for clean,
-                efficient code, I strive to create engaging and user-friendly
-                web experiences.
+              <p className="text-lg mb-4 text-gray-600 dark:text-gray-400">
+                I&apos;m a passionate web developer with expertise in modern
+                frontend technologies. With a keen eye for design and a love for
+                clean, efficient code, I strive to create engaging and
+                user-friendly web experiences.
               </p>
-              <p className="text-lg mb-4">
+              <p className="text-lg mb-4 text-gray-600 dark:text-gray-400">
                 My journey in web development started [X] years ago, and since
-                then, Ive had the opportunity to work on diverse projects, from
-                small business websites to large-scale web applications.
+                then, I&apos;ve had the opportunity to work on diverse projects,
+                from small business websites to large-scale web applications.
               </p>
-              <p className="text-lg mb-4">
-                When Im not coding, you can find me [your hobbies or interests].
-                I believe in continuous learning and am always excited to take
-                on new challenges in the ever-evolving world of web development.
+              <p className="text-lg mb-4 text-gray-600 dark:text-gray-400">
+                When I&apos;m not coding, you can find me [your hobbies or
+                interests]. I believe in continuous learning and am always
+                excited to take on new challenges in the ever-evolving world of
+                web development.
               </p>
               <ResumeDownload />
             </motion.div>
@@ -280,7 +270,7 @@ export default function Component() {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <div className="w-full h-[400px] bg-gradient-to-br from-purple-300 to-indigo-300 dark:from-purple-600 dark:to-indigo-600 rounded-lg shadow-lg overflow-hidden">
+              <div className="w-full h-[400px] bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-600 rounded-lg shadow-lg overflow-hidden">
                 <Image
                   src="/img/aboutMe.jpeg"
                   alt="Profile"
@@ -301,7 +291,7 @@ export default function Component() {
       >
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-5xl text-center mb-16 font-light bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-indigo-500"
+            className="text-5xl text-center mb-16 font-light text-gray-800 dark:text-gray-200"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -341,12 +331,14 @@ export default function Component() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <service.icon className="w-16 h-16 text-indigo-600 dark:text-indigo-400" />
-                <h3 className="text-2xl font-medium">{service.title}</h3>
-                <p className="text-indigo-600 dark:text-indigo-400">
+                <service.icon className="w-16 h-16 text-gray-700 dark:text-gray-300" />
+                <h3 className="text-2xl font-medium text-gray-800 dark:text-gray-200">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400">
                   {service.subtitle}
                 </p>
-                <p className="text-sm text-gray-600 dark:text-gray-300">
+                <p className="text-sm text-gray-600 dark:text-gray-400">
                   {service.description}
                 </p>
               </motion.div>
@@ -358,11 +350,11 @@ export default function Component() {
       {/* Skills Section */}
       <Element
         name="skills"
-        className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-800 p-10"
+        className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900 p-10"
       >
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-5xl text-center mb-16 font-light bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-indigo-500"
+            className="text-5xl text-center mb-16 font-light text-gray-800 dark:text-gray-200"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -380,7 +372,7 @@ export default function Component() {
                 transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-2xl font-medium mb-4">
+                <h3 className="text-2xl font-medium mb-4 text-gray-800 dark:text-gray-200">
                   {skillCategory.category}
                 </h3>
                 <div className="w-full space-y-4">
@@ -388,20 +380,20 @@ export default function Component() {
                     <div key={skill.name} className="relative pt-1">
                       <div className="flex mb-2 items-center justify-between">
                         <div>
-                          <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-indigo-600 bg-indigo-200">
+                          <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-gray-700 bg-gray-200 dark:text-gray-300 dark:bg-gray-700">
                             {skill.name}
                           </span>
                         </div>
                         <div className="text-right">
-                          <span className="text-xs font-semibold inline-block text-indigo-600">
+                          <span className="text-xs font-semibold inline-block text-gray-700 dark:text-gray-300">
                             {skill.level}%
                           </span>
                         </div>
                       </div>
-                      <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-indigo-200">
+                      <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200 dark:bg-gray-700">
                         <motion.div
                           style={{ width: `${skill.level}%` }}
-                          className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-indigo-500"
+                          className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-gray-500 dark:bg-gray-400"
                           initial={{ width: 0 }}
                           whileInView={{ width: `${skill.level}%` }}
                           transition={{ duration: 1, delay: skillIndex * 0.1 }}
@@ -424,7 +416,7 @@ export default function Component() {
       >
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-5xl text-center mb-16 font-light bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-indigo-500"
+            className="text-5xl text-center mb-16 font-light text-gray-800 dark:text-gray-200"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -450,7 +442,8 @@ export default function Component() {
                 type="text"
                 id="name"
                 name="name"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-gray-200"
+                placeholder="What is your name?"
                 required
               />
             </div>
@@ -465,7 +458,8 @@ export default function Component() {
                 type="email"
                 id="email"
                 name="email"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-gray-200"
+                placeholder="name@osutada.jp"
                 required
               />
             </div>
@@ -480,13 +474,14 @@ export default function Component() {
                 id="message"
                 name="message"
                 rows={4}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-gray-200"
+                placeholder="Leave a comment..."
                 required
               ></textarea>
             </div>
             <button
               type="submit"
-              className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition-colors"
+              className="w-full bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-700 transition-colors"
             >
               Send Message
             </button>
@@ -495,7 +490,7 @@ export default function Component() {
       </Element>
 
       {/* Footer */}
-      <footer className="bg-gray-100 dark:bg-gray-900 py-8">
+      <footer className="bg-gray-100 dark:bg-gray-800 py-8">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-600 dark:text-gray-400 mb-4 md:mb-0">
@@ -508,7 +503,7 @@ export default function Component() {
       {/* Scroll to Top Button */}
       {showScrollTop && (
         <motion.button
-          className="fixed bottom-8 right-8 bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-700 transition-colors"
+          className="fixed bottom-8 right-8 bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition-colors"
           onClick={scrollToTop}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
