@@ -1,7 +1,7 @@
 "use client";
 
-import Contact from "@/_components/Contact";
-import ResumeDownload from "@/_components/ResumeDownload";
+import Contact from "@/components/Contact";
+import ResumeDownload from "@/components/ResumeDownload";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
