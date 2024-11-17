@@ -1,5 +1,6 @@
 "use client";
 
+import Contact from "@/_components/Contact";
 import ResumeDownload from "@/_components/ResumeDownload";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -424,68 +425,7 @@ export default function Component() {
           >
             Contact
           </motion.h2>
-          <motion.form
-            className="max-w-lg mx-auto"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <div className="mb-4">
-              <label
-                htmlFor="name"
-                className="block text-gray-700 dark:text-gray-300 mb-2"
-              >
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-gray-200"
-                placeholder="What is your name?"
-                required
-              />
-            </div>
-            <div className="mb-4">
-              <label
-                htmlFor="email"
-                className="block text-gray-700 dark:text-gray-300 mb-2"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-gray-200"
-                placeholder="name@osutada.jp"
-                required
-              />
-            </div>
-            <div className="mb-4">
-              <label
-                htmlFor="message"
-                className="block text-gray-700 dark:text-gray-300 mb-2"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-gray-200"
-                placeholder="Leave a comment..."
-                required
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-700 transition-colors"
-            >
-              Send Message
-            </button>
-          </motion.form>
+          <Contact />
         </div>
       </Element>
 
