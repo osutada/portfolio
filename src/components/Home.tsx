@@ -1,42 +1,71 @@
+"use client";
+
 import ScrollLink from "@/components/layout/ScrollLink";
-import { motion } from "framer-motion";
+import Loading from "@/components/parts/Loading";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setProgress((prevProgress) => {
+        if (prevProgress >= 1) {
+          clearInterval(timer);
+          setIsLoading(false);
+          return 1;
+        }
+        return prevProgress + 0.01;
+      });
+    }, 14);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
+
   return (
     <>
-      <div className="container mx-auto px-4 text-center z-10">
-        <motion.h2
-          className="text-4xl sm:text-6xl tracking-wide font-bold mb-4 text-gray-800 dark:text-gray-200"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-        >
-          OSUTADA
-        </motion.h2>
-        <motion.p
-          className="text-base sm:text-lg mb-8 text-gray-600 dark:text-gray-400 tracking-wider"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          PORTFOLIO OF YUMA ENDO
-          <br />
-          WEB ENGINEER
-        </motion.p>
-        <ScrollLink key="header" to="about">
-          <motion.button
-            className="bg-gray-800 text-white py-2 px-6 rounded-full hover:bg-gray-700 transition-colors"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            Learn More
-          </motion.button>
-        </ScrollLink>
-      </div>
+      <AnimatePresence>
+        {isLoading ? (
+          <Loading key="loading" progress={progress} />
+        ) : (
+          <motion.div key="content" initial="hidden" animate="visible">
+            <div className="container mx-auto px-4 text-center z-10">
+              <motion.h2
+                className="text-4xl sm:text-7xl tracking-wide font-bold mb-4 text-gray-800 dark:text-gray-200"
+                variants={itemVariants}
+              >
+                OSUTADA
+              </motion.h2>
+              <motion.p
+                className="text-base sm:text-lg mb-8 text-gray-600 dark:text-gray-400 tracking-wider"
+                variants={itemVariants}
+              >
+                PORTFOLIO OF YUMA ENDO
+                <br />
+                WEB ENGINEER
+              </motion.p>
+              <ScrollLink key="header" to="about">
+                <motion.button
+                  className="bg-gray-800 dark:bg-gray-200 text-white dark:text-gray-900 py-2 px-6 rounded-full hover:bg-gray-700 dark:hover:bg-gray-300 transition-colors"
+                  variants={itemVariants}
+                >
+                  Learn More
+                </motion.button>
+              </ScrollLink>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
