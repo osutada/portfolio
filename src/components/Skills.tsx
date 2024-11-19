@@ -38,13 +38,13 @@ export default function Skills() {
   ];
 
   return (
-    <div className="container m-7 px-6">
+    <div className="container m-5 px-6">
       <motion.h2
         className="text-4xl sm:text-5xl text-center mb-16 font-light text-gray-800 dark:text-gray-200"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
       >
         Skills
       </motion.h2>
@@ -56,7 +56,7 @@ export default function Skills() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
           >
             <h3 className="text-xl sm:text-2xl font-medium mb-4 text-gray-800 dark:text-gray-200">
               {skillCategory.category}
@@ -78,7 +78,7 @@ export default function Skills() {
                             duration: 0.3,
                             delay: skillIndex * 0.1 + star * 0.05,
                           }}
-                          viewport={{ once: true }}
+                          viewport={{ once: false }}
                         >
                           <Star
                             className={`w-5 h-5 ${

@@ -299,11 +299,9 @@ const MyDocument = () => (
 export default function ResumeDownload() {
   return (
     <PDFDownloadLink document={<MyDocument />} fileName="resume1.pdf">
-      <button
-        className="flex items-center px-4 py-2 bg-blue-500 text-white rounded"
-        disabled={false}
-      >
+      <button className="flex items-center px-4 py-2 bg-blue-500 text-white rounded">
         <FiDownload className="mr-2" />
+        Resume Download
       </button>
     </PDFDownloadLink>
   );
