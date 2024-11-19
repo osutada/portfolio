@@ -1,14 +1,14 @@
 "use client";
 
+import ScrollLink from "@/components/layout/ScrollLink";
 import CommonMeta from "@/components/parts/MetaData";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { LuMoon, LuSun } from "react-icons/lu";
-import { Link as ScrollLink } from "react-scroll";
 
 export default function Header() {
-  const sections = ["home", "about", "sevice", "skills", "contact"];
+  const sections = ["home", "about", "service", "skills", "contact"];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -32,8 +32,6 @@ export default function Header() {
                 <ScrollLink
                   key={item}
                   to={item}
-                  smooth={true}
-                  duration={500}
                   className="cursor-pointer text-gray-800 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
                 >
                   <motion.span
@@ -111,8 +109,6 @@ export default function Header() {
                 <ScrollLink
                   key={item}
                   to={item}
-                  smooth={true}
-                  duration={500}
                   className="cursor-pointer hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
