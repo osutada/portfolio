@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
 import { animateScroll as scroll } from "react-scroll";
 
-export default function Skills() {
+export default function ScrollTopButton() {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
@@ -14,9 +14,7 @@ export default function Skills() {
         setShowScrollTop(false);
       }
     };
-
     window.addEventListener("scroll", toggleVisibility);
-
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
@@ -28,7 +26,7 @@ export default function Skills() {
     <>
       {showScrollTop && (
         <motion.button
-          className="fixed bottom-8 right-8 rounded-full bg-indigo-600 p-3 text-white shadow-lg transition-colors hover:bg-indigo-700"
+          className="fixed bottom-8 right-8 rounded-full p-3 bg-slate-600 text-white shadow-lg transition-colors hover:bg-slate-700"
           onClick={scrollToTop}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

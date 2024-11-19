@@ -1,5 +1,6 @@
 "use client";
 
+import CommonMeta from "@/components/parts/MetaData";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
@@ -7,7 +8,7 @@ import { LuMoon, LuSun } from "react-icons/lu";
 import { Link as ScrollLink } from "react-scroll";
 
 export default function Header() {
-  const sections = ["home", "about", "works", "skills", "contact"];
+  const sections = ["home", "about", "sevice", "skills", "contact"];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -22,17 +23,10 @@ export default function Header() {
 
   return (
     <>
-      <header className="py-4 bg-opacity-80 backdrop-filter backdrop-blur-lg fixed top-0 left-0 right-0 z-50 p-3 shadow-sm">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center">
-            <motion.h1
-              className="text-3xl font-bold text-gray-800 dark:text-gray-200"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              OSUTADA
-            </motion.h1>
+      <header className="py-4 bg-opacity-80 backdrop-filter backdrop-blur-lg fixed top-0 left-0 right-0 z-50 p-3  ">
+        <CommonMeta title={"OSUTADA"} />
+        <div className="container mx-auto px-4 ">
+          <div className="flex justify-end items-center">
             <nav className="hidden md:flex space-x-8 items-center">
               {sections.map((item, index) => (
                 <ScrollLink
@@ -70,7 +64,17 @@ export default function Header() {
                 </motion.button>
               )}
             </nav>
-            <div className="md:hidden flex items-center space-x-4">
+            <div className="md:hidden flex space-x-4">
+              <motion.button
+                className="text-2xl text-gray-800 dark:text-gray-200"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label="Toggle menu"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                ☰
+              </motion.button>
               {mounted && (
                 <motion.button
                   onClick={toggleTheme}
@@ -89,16 +93,6 @@ export default function Header() {
                   )}
                 </motion.button>
               )}
-              <motion.button
-                className="text-2xl text-gray-800 dark:text-gray-200"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                aria-label="Toggle menu"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                ☰
-              </motion.button>
             </div>
           </div>
         </div>

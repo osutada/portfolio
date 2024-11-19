@@ -4,11 +4,11 @@ import { HiOutlinePencil } from "react-icons/hi";
 import { VscCode } from "react-icons/vsc";
 import { Element } from "react-scroll";
 
-export default function ServiceSection() {
+export default function Service() {
   return (
     <>
       <Element
-        name="works"
+        name="sevice"
         className="min-h-screen flex items-center justify-center p-10"
       >
         <div className="container mx-auto px-4">
