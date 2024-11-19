@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <div className="container mx-auto px-4 text-center z-10">
         <motion.h2
-          className="text-6xl tracking-wide font-bold mb-4 text-gray-800 dark:text-gray-200"
+          className="text-4xl sm:text-6xl tracking-wide font-bold mb-4 text-gray-800 dark:text-gray-200"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -15,7 +15,7 @@ export default function Home() {
           OSUTADA
         </motion.h2>
         <motion.p
-          className="text-lg mb-8 text-gray-600 dark:text-gray-400 tracking-wider"
+          className="text-base sm:text-lg mb-8 text-gray-600 dark:text-gray-400 tracking-wider"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
