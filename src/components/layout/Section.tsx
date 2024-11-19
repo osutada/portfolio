@@ -9,12 +9,12 @@ type Props = {
 
 export default function Section(props: Props) {
   const { name, children, className } = props;
-
-  const defaultClassName = "min-h-screen flex items-center justify-center p-10";
-  const combinedClassName = `${defaultClassName} ${className}`.trim();
   return (
     <>
-      <Element name={name} className={combinedClassName}>
+      <Element
+        name={name}
+        className={`min-h-svh flex items-center justify-center p-10 ${className}`.trim()}
+      >
         {children}
       </Element>
     </>
