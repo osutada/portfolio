@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 何故かFutura, futura という名称を付けるとスマホに反映されない */
 @font-face {
   font-family: "myfont";
   src: url("/fonts/Futura.ttf") format("truetype");

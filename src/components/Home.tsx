@@ -49,7 +49,7 @@ export default function Home() {
               </div>
               <div className="relative">
                 <motion.h2
-                  className="section-title-text-color text-4xl sm:text-7xl tracking-wide font-bold mb-4"
+                  className="section-title-text-color text-5xl sm:text-7xl tracking-wide font-bold mb-2"
                   variants={itemVariants}
                 >
                   OSUTADA
