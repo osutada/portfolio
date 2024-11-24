@@ -40,28 +40,38 @@ export default function Home() {
         ) : (
           <motion.div key="content" initial="hidden" animate="visible">
             <div className="container mx-auto px-4 text-center z-10">
-              <motion.h2
-                className="text-4xl sm:text-7xl tracking-wide font-bold mb-4 text-gray-800 dark:text-gray-200"
-                variants={itemVariants}
+              <video
+                className="absolute inset-0 object-cover w-full h-full opacity-20 z-0"
+                autoPlay
+                loop
+                muted
               >
-                OSUTADA
-              </motion.h2>
-              <motion.p
-                className="text-base sm:text-lg mb-8 text-gray-600 dark:text-gray-400 tracking-wider"
-                variants={itemVariants}
-              >
-                PORTFOLIO OF YUMA ENDO
-                <br />
-                WEB ENGINEER
-              </motion.p>
-              <ScrollLink key="header" to="about">
-                <motion.button
-                  className="bg-gray-800 dark:bg-gray-200 text-white dark:text-gray-900 py-2 px-6 rounded-full hover:bg-gray-700 dark:hover:bg-gray-300 transition-colors"
+                <source src="/images/SECTION_VIDEO.mp4" type="video/mp4" />
+              </video>
+              <div className="relative">
+                <motion.h2
+                  className="text-4xl sm:text-7xl tracking-wide font-bold mb-4 text-gray-800 dark:text-gray-200"
                   variants={itemVariants}
                 >
-                  Learn More
-                </motion.button>
-              </ScrollLink>
+                  OSUTADA
+                </motion.h2>
+                <motion.p
+                  className="text-base sm:text-lg mb-8 text-gray-600 dark:text-gray-400 tracking-wider"
+                  variants={itemVariants}
+                >
+                  PORTFOLIO OF YUMA ENDO
+                  <br />
+                  WEB ENGINEER
+                </motion.p>
+                <ScrollLink key="header" to="about">
+                  <motion.button
+                    className="bg-gray-800 dark:bg-gray-200 text-white dark:text-gray-900 py-2 px-6 rounded-full hover:bg-gray-700 dark:hover:bg-gray-300 transition-colors"
+                    variants={itemVariants}
+                  >
+                    Learn More
+                  </motion.button>
+                </ScrollLink>
+              </div>
             </div>
           </motion.div>
         )}
