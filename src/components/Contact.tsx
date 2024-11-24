@@ -22,49 +22,40 @@ export default function Contact() {
           viewport={{ once: false }}
         >
           <div className="mb-4">
-            <label
-              htmlFor="name"
-              className="block text-gray-700 dark:text-gray-300 mb-2"
-            >
+            <label htmlFor="name" className="section-subtitle block">
               Name
             </label>
             <input
               type="text"
               id="name"
               name="entry.239822804"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-gray-200"
+              className="section-text w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 bg-white dark:bg-gray-800 dark:border-gray-600 "
               placeholder="What is your name?"
               required
             />
           </div>
           <div className="mb-4">
-            <label
-              htmlFor="email"
-              className="block text-gray-700 dark:text-gray-300 mb-2"
-            >
+            <label htmlFor="email" className="section-subtitle block">
               Email
             </label>
             <input
               type="email"
               id="email"
               name="entry.1578697554"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-gray-200"
+              className="section-text section-text w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 bg-white dark:bg-gray-800 dark:border-gray-600 "
               placeholder="name@example.com"
               required
             />
           </div>
           <div className="mb-4">
-            <label
-              htmlFor="message"
-              className="block text-gray-700 dark:text-gray-300 mb-2"
-            >
+            <label htmlFor="message" className="section-subtitle block">
               Message
             </label>
             <textarea
               id="message"
               name="entry.945498449"
               rows={4}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-gray-200"
+              className="section-text w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 bg-white dark:bg-gray-800 dark:border-gray-600 "
               placeholder="Leave a comment..."
               required
             ></textarea>
