@@ -1,33 +1,47 @@
 "use client";
 
 import ScrollLink from "@/components/layout/ScrollLink";
+import LightAndDarkButton from "@/components/parts/LightAndDarkButton";
 import CommonMeta from "@/components/parts/MetaData";
-import { motion } from "framer-motion";
-import { useTheme } from "next-themes";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { LuMoon, LuSun } from "react-icons/lu";
+import { LuMenu, LuX } from "react-icons/lu";
 
 export default function Header() {
   const sections = ["home", "about", "service", "skills", "contact"];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
 
+  // Prevent scroll when menu is open
   useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
-  };
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMenuOpen]);
 
   return (
     <>
-      <header className="py-4 bg-opacity-80 backdrop-filter backdrop-blur-lg fixed top-0 left-0 right-0 z-50 p-3  ">
-        <CommonMeta title={"OSUTADA"} />
-        <div className="container mx-auto px-4 ">
-          <div className="flex justify-end items-center">
-            <nav className="hidden md:flex space-x-8 items-center">
+      <CommonMeta title={"OSUTADA"} />
+      <header className="py-4 bg-opacity-80 backdrop-filter backdrop-blur-lg fixed top-0 left-0 right-0 z-50 p-3">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-between md:justify-end items-center space-x-8">
+            <div className="md:hidden">
+              <motion.button
+                className="text-2xl text-gray-800 dark:text-gray-200 p-2"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label="Toggle menu"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                <LuMenu size={24} />
+              </motion.button>
+            </div>
+            <nav className="hidden md:flex space-x-6 items-center">
               {sections.map((item, index) => (
                 <ScrollLink
                   key={item}
@@ -43,88 +57,60 @@ export default function Header() {
                   </motion.span>
                 </ScrollLink>
               ))}
-              {mounted && (
-                <motion.button
-                  onClick={toggleTheme}
-                  className="p-2 rounded-full bg-gray-700 dark:bg-gray-200 text-gray-200 dark:text-gray-800"
-                  aria-label={`Switch to ${
-                    theme === "light" ? "dark" : "light"
-                  } mode`}
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  {theme === "light" ? (
-                    <LuMoon size={20} />
-                  ) : (
-                    <LuSun size={20} />
-                  )}
-                </motion.button>
-              )}
             </nav>
-            <div className="md:hidden flex space-x-4">
-              <motion.button
-                className="text-2xl text-gray-800 dark:text-gray-200"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                aria-label="Toggle menu"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                ☰
-              </motion.button>
-              {mounted && (
-                <motion.button
-                  onClick={toggleTheme}
-                  className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200"
-                  aria-label={`Switch to ${
-                    theme === "light" ? "dark" : "light"
-                  } mode`}
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  {theme === "light" ? (
-                    <LuMoon size={20} />
-                  ) : (
-                    <LuSun size={20} />
-                  )}
-                </motion.button>
-              )}
-            </div>
+            <LightAndDarkButton />
           </div>
         </div>
       </header>
-      {isMenuOpen && (
-        <motion.div
-          className="md:hidden bg-white dark:bg-gray-800 py-2 fixed top-16 left-0 right-0 z-40 shadow-md"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.3 }}
-        >
-          <div className="container mx-auto px-4">
-            <nav className="flex flex-col space-y-2">
-              {sections.map((item, index) => (
-                <ScrollLink
-                  key={item}
-                  to={item}
-                  className="cursor-pointer hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            className="fixed inset-0 bg-white dark:bg-gray-900 z-50 md:hidden"
+            initial={{ clipPath: "circle(0% at top left)" }}
+            animate={{ clipPath: "circle(150% at top left)" }}
+            exit={{ clipPath: "circle(0% at top left)" }}
+            transition={{ type: "tween", duration: 0.5 }}
+          >
+            <div className="flex flex-col h-full">
+              <div className="flex items-center p-4 border-b border-gray-200 dark:border-gray-700">
+                <button
                   onClick={() => setIsMenuOpen(false)}
+                  className="text-gray-800 dark:text-gray-200 p-2 w-1/3 pl-5"
+                  aria-label="Close"
                 >
-                  <motion.span
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                  >
-                    {item.charAt(0).toUpperCase() + item.slice(1)}
-                  </motion.span>
-                </ScrollLink>
-              ))}
-            </nav>
-          </div>
-        </motion.div>
-      )}
+                  <LuX size={24} />
+                </button>
+                <div className="flex justify-center text-xl font-semibold text-gray-800 dark:text-gray-200 w-1/3">
+                  Menu
+                </div>
+              </div>
+              <nav className="flex-1 overflow-y-auto">
+                <div className="container mx-auto px-5 py-6">
+                  {sections.map((item, index) => (
+                    <motion.div
+                      key={item}
+                      initial={{ opacity: 0, y: -20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.1 }}
+                      className="border-b border-gray-200 dark:border-gray-700"
+                    >
+                      <ScrollLink
+                        key={item}
+                        to={item}
+                        className="block py-4 px-6 text-lg text-gray-800 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {item.charAt(0).toUpperCase() + item.slice(1)}
+                      </ScrollLink>
+                    </motion.div>
+                  ))}
+                </div>
+              </nav>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
