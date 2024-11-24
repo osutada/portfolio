@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "futura";
+  font-family: "myfont";
   src: url("/fonts/Futura.ttf") format("truetype");
   font-style: normal;
 }
@@ -29,7 +29,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: futura, Roboto, Helvetica, sans-serif;
+  font-family: myfont, Roboto, Helvetica, sans-serif;
 }
 
 /* 
