@@ -1,4 +1,3 @@
-import ResumeDownload from "@/components/parts/ResumeDownload";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -47,7 +46,6 @@ export default function About() {
               forward to taking on new challenges in the ever-evolving world of
               web development.
             </p>
-            <ResumeDownload />
           </motion.div>
           <motion.div
             className="md:w-1/2"
