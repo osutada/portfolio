@@ -31,9 +31,9 @@ export default function Header() {
           <div className="flex justify-between md:justify-end items-center space-x-8">
             <div className="md:hidden">
               <motion.button
-                className="text-2xl text-gray-800 dark:text-gray-200 p-2"
+                className="section-title-text-color p-2"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                aria-label="Toggle menu"
+                aria-label="Toggle"
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}

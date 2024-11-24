@@ -5,7 +5,7 @@ export default function Contact() {
     <>
       <div className="container mx-auto px-4">
         <motion.h2
-          className="text-4xl sm:text-5xl text-center mb-16 font-light text-gray-800 dark:text-gray-200"
+          className="section-title"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -71,7 +71,7 @@ export default function Contact() {
           </div>
           <button
             type="submit"
-            className="w-full bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-700 transition-colors disabled:opacity-50"
+            className="button-color w-full py-2 px-4 rounded-md disabled:opacity-50"
           >
             {"Send Message"}
           </button>

@@ -23,7 +23,7 @@ export default function ScrollTopButton() {
     <>
       {showScrollTop && (
         <motion.button
-          className="fixed bottom-8 right-8 rounded-full p-3 bg-slate-600 text-white shadow-lg transition-colors hover:bg-slate-700"
+          className="button-color fixed bottom-8 right-8 rounded-full p-3 shadow-lg "
           onClick={scrollToTop}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

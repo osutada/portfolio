@@ -28,7 +28,7 @@ export default function LightAndDarkButton() {
       {mounted && (
         <motion.button
           onClick={toggleTheme}
-          className="p-2 rounded-full bg-gray-700 dark:bg-gray-200 text-gray-200 dark:text-gray-800"
+          className="button-color p-2 rounded-full"
           aria-label={`${getToggleTheme(theme)} mode`}
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}

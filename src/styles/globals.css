@@ -31,3 +31,39 @@ body {
   background: var(--background);
   font-family: Futura, Roboto, Helvetica, sans-serif;
 }
+
+/* 
+  セクション毎のタイトルカラー
+*/
+.section-title-text-color {
+  @apply text-gray-800 dark:text-gray-200;
+}
+
+/* 
+  セクション毎のタイトルに用いる共通クラス
+*/
+.section-title {
+  @apply text-4xl sm:text-5xl font-bold text-center mb-16 section-title-text-color;
+}
+
+/* 
+  セクション毎のサブタイトルに用いる共通クラス
+*/
+.section-subtitle {
+  @apply text-lg sm:text-xl font-semibold mb-4 section-title-text-color;
+}
+
+/* 
+  セクション毎のテキストに用いる共通クラス
+*/
+.section-text {
+  @apply text-base sm:text-lg text-gray-600 dark:text-gray-400;
+}
+
+/* 
+  画面内全てのボタンコンポーネントに用いる共通クラス
+  背景色, 背景色(ホバー時), テキスト色
+*/
+.button-color {
+  @apply bg-gray-800 dark:bg-gray-200 text-white dark:text-gray-900 hover:bg-gray-700 dark:hover:bg-gray-300 transition-colors duration-200;
+}

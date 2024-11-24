@@ -40,7 +40,7 @@ export default function Skills() {
   return (
     <div className="container m-5 px-6">
       <motion.h2
-        className="text-4xl sm:text-5xl text-center mb-16 font-light text-gray-800 dark:text-gray-200"
+        className="section-title"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -58,16 +58,12 @@ export default function Skills() {
             transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
             viewport={{ once: false }}
           >
-            <h3 className="text-xl sm:text-2xl font-medium mb-4 text-gray-800 dark:text-gray-200">
-              {skillCategory.category}
-            </h3>
+            <h3 className="section-subtitle">{skillCategory.category}</h3>
             <div className="w-full space-y-4">
               {skillCategory.items.map((skill, skillIndex) => (
                 <div key={skill.name} className="relative">
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-sm font-medium text-gray-800 dark:text-gray-200">
-                      {skill.name}
-                    </span>
+                    <span className="section-text">{skill.name}</span>
                     <div className="flex">
                       {[1, 2, 3, 4, 5].map((star) => (
                         <motion.div

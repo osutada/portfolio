@@ -8,7 +8,7 @@ export default function Service() {
     <>
       <div className="container m-5 px-4">
         <motion.h2
-          className="text-4xl sm:text-5xl text-center mb-20 font-light text-gray-800 dark:text-gray-200"
+          className="section-title"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -46,12 +46,8 @@ export default function Service() {
               viewport={{ once: false }}
             >
               <service.icon className="w-16 h-16 text-gray-700 dark:text-gray-300" />
-              <h3 className="text-xl sm:text-2xl font-medium text-gray-800 dark:text-gray-200">
-                {service.title}
-              </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                {service.description}
-              </p>
+              <h3 className="section-subtitle">{service.title}</h3>
+              <p className="section-text">{service.description}</p>
             </motion.div>
           ))}
         </div>

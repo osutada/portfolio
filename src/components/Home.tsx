@@ -49,22 +49,19 @@ export default function Home() {
               </div>
               <div className="relative">
                 <motion.h2
-                  className="text-4xl sm:text-7xl tracking-wide font-bold mb-4 text-gray-800 dark:text-gray-200"
+                  className="section-title-text-color text-4xl sm:text-7xl tracking-wide font-bold mb-4"
                   variants={itemVariants}
                 >
                   OSUTADA
                 </motion.h2>
-                <motion.p
-                  className="text-base sm:text-lg mb-8 text-gray-600 dark:text-gray-400 tracking-wider"
-                  variants={itemVariants}
-                >
+                <motion.p className="section-text mb-6" variants={itemVariants}>
                   PORTFOLIO OF YUMA ENDO
                   <br />
                   WEB ENGINEER
                 </motion.p>
                 <ScrollLink key="header" to="about">
                   <motion.button
-                    className="bg-gray-800 dark:bg-gray-200 text-white dark:text-gray-900 py-2 px-6 rounded-full hover:bg-gray-700 dark:hover:bg-gray-300 transition-colors"
+                    className="button-color py-2 px-6 rounded-full"
                     variants={itemVariants}
                   >
                     Learn More
