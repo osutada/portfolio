@@ -3,8 +3,14 @@
 @tailwind utilities;
 
 @font-face {
+  font-family: "Futura";
+  src: url("/fonts/Futura.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
   font-family: "Roboto";
-  src: url("/fonts/NotoSansJP-Regular.ttf") format("truetype");
+  src: url("/fonts/NotoSans.ttf") format("truetype");
   font-style: normal;
 }
 
@@ -23,5 +29,5 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Roboto, Helvetica, sans-serif;
+  font-family: Futura, Roboto, Helvetica, sans-serif;
 }
