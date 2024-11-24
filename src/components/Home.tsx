@@ -3,7 +3,6 @@
 import ScrollLink from "@/components/layout/ScrollLink";
 import Loading from "@/components/parts/Loading";
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -42,12 +41,10 @@ export default function Home() {
           <motion.div key="content" initial="hidden" animate="visible">
             <div className="container mx-auto px-4 text-center z-10">
               <div className="absolute inset-0 object-cover w-full h-full opacity-20 z-0">
-                <Image
+                <img
                   src="/images/HeroImage.jpeg"
-                  alt="Profile"
+                  alt="HeroImage"
                   className="w-full h-full object-cover"
-                  height={1000}
-                  width={1000}
                 />
               </div>
               <div className="relative">

@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 export default function About() {
   return (
@@ -55,12 +54,10 @@ export default function About() {
             viewport={{ once: false }}
           >
             <div className="w-full h-[400px] bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-600 rounded-lg shadow-lg overflow-hidden">
-              <Image
+              <img
                 src="/images/aboutMe.jpeg"
-                alt="Profile"
+                alt="aboutMe"
                 className="w-full h-full object-cover"
-                height={400}
-                width={300}
               />
             </div>
           </motion.div>

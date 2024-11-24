@@ -1,3 +1,7 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  // 画像最適化警告を無視する
+  "rules": {
+    "@next/next/no-img-element": "off"
+  }
 }
