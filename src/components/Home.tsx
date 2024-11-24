@@ -3,6 +3,7 @@
 import ScrollLink from "@/components/layout/ScrollLink";
 import Loading from "@/components/parts/Loading";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -40,14 +41,15 @@ export default function Home() {
         ) : (
           <motion.div key="content" initial="hidden" animate="visible">
             <div className="container mx-auto px-4 text-center z-10">
-              <video
-                className="absolute inset-0 object-cover w-full h-full opacity-20 z-0"
-                autoPlay
-                loop
-                muted
-              >
-                <source src="/images/SECTION_VIDEO.mp4" type="video/mp4" />
-              </video>
+              <div className="absolute inset-0 object-cover w-full h-full opacity-20 z-0">
+                <Image
+                  src="/images/HeroImage.jpeg"
+                  alt="Profile"
+                  className="w-full h-full object-cover"
+                  height={1000}
+                  width={1000}
+                />
+              </div>
               <div className="relative">
                 <motion.h2
                   className="text-4xl sm:text-7xl tracking-wide font-bold mb-4 text-gray-800 dark:text-gray-200"
