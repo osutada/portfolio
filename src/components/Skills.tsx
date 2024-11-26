@@ -58,7 +58,7 @@ export default function Skills() {
             transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
             viewport={{ once: false }}
           >
-            <h3 className="section-subtitle">{skillCategory.category}</h3>
+            <h3 className="section-subtitle mb-2">{skillCategory.category}</h3>
             <div className="w-full space-y-4">
               {skillCategory.items.map((skill, skillIndex) => (
                 <div key={skill.name} className="relative">

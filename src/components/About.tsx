@@ -1,4 +1,6 @@
+import aboutMeImg from "@/images/aboutMe.jpeg";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useState } from "react";
 import { BsTranslate } from "react-icons/bs";
 
@@ -69,7 +71,9 @@ export default function About() {
             viewport={{ once: false }}
           >
             <div className="mb-4">
-              <h3 className="section-subtitle">Hello, I&apos;m Yuma Endo.</h3>
+              <h3 className="section-subtitle mb-2">
+                Hello, I&apos;m Yuma Endo.
+              </h3>
               <p className="section-text mb-6">
                 {content[language].paragraph1}
               </p>
@@ -91,8 +95,8 @@ export default function About() {
             viewport={{ once: false }}
           >
             <div className="w-full h-[500px] bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-600 rounded-lg shadow-lg overflow-hidden">
-              <img
-                src="/images/aboutMe.jpeg"
+              <Image
+                src={aboutMeImg}
                 alt="aboutMe"
                 className="w-full h-full object-cover"
               />

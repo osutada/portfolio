@@ -51,7 +51,7 @@ body {
   セクション毎のサブタイトルに用いる共通クラス
 */
 .section-subtitle {
-  @apply text-lg sm:text-xl font-semibold mb-4 section-title-text-color;
+  @apply text-lg sm:text-xl font-semibold section-title-text-color;
 }
 
 /* 

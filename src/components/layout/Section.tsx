@@ -13,7 +13,7 @@ export default function Section(props: Props) {
     <>
       <Element
         name={name}
-        className={`min-h-svh flex items-center justify-center p-10 ${className}`.trim()}
+        className={`min-h-svh flex items-center justify-center p-8 ${className}`.trim()}
       >
         {children}
       </Element>

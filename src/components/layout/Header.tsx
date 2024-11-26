@@ -26,7 +26,7 @@ export default function Header() {
   return (
     <>
       <CommonMeta title={"OSUTADA"} />
-      <header className="py-4 bg-opacity-80 backdrop-filter backdrop-blur-lg fixed top-0 left-0 right-0 z-50 p-3">
+      <header className="py-4 p-2 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
         <div className="container mx-auto px-4">
           <div className="flex justify-between md:justify-end items-center space-x-8">
             <div className="md:hidden">
@@ -46,7 +46,7 @@ export default function Header() {
                 <ScrollLink
                   key={item}
                   to={item}
-                  className="cursor-pointer text-gray-800 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+                  className="cursor-pointer text-gray-800 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300 transition-colors group"
                 >
                   <motion.span
                     initial={{ opacity: 0, y: -20 }}
@@ -55,6 +55,7 @@ export default function Header() {
                   >
                     {item.charAt(0).toUpperCase() + item.slice(1)}
                   </motion.span>
+                  <div className="bg-gray-800 dark:bg-gray-200 h-[2px] w-0 group-hover:w-full transition-all duration-500"></div>
                 </ScrollLink>
               ))}
             </nav>

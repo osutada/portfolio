@@ -22,7 +22,7 @@ export default function Contact() {
           viewport={{ once: false }}
         >
           <div className="mb-4">
-            <label htmlFor="name" className="section-subtitle block">
+            <label htmlFor="name" className="section-subtitle mb-2 block">
               Name
             </label>
             <input
@@ -35,7 +35,7 @@ export default function Contact() {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="email" className="section-subtitle block">
+            <label htmlFor="email" className="section-subtitle mb-2 block">
               Email
             </label>
             <input
@@ -48,7 +48,7 @@ export default function Contact() {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="message" className="section-subtitle block">
+            <label htmlFor="message" className="section-subtitle mb-2 block">
               Message
             </label>
             <textarea
