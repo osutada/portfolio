@@ -2,21 +2,14 @@
 
 import ScrollLink from "@/components/layout/ScrollLink";
 import Loading from "@/components/parts/Loading";
+import HeroImage from "@/images/HeroImage.jpeg";
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [progress, setProgress] = useState(0);
-
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const imageRef = useRef<HTMLImageElement>(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play();
-    }
-  }, [videoRef, imageRef]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -50,14 +43,10 @@ export default function Home() {
           <motion.div key="content" initial="hidden" animate="visible">
             <div className="container mx-auto px-4 text-center z-10">
               <div className="absolute inset-0 object-cover w-full h-full opacity-20 z-0">
-                <video
-                  ref={videoRef}
-                  src="/images/HeroMovie.mp4"
+                <Image
+                  src={HeroImage}
+                  alt="hero image."
                   className="w-full h-full object-cover"
-                  autoPlay
-                  playsInline
-                  muted
-                  loop
                 />
               </div>
               <div className="relative">

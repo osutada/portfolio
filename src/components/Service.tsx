@@ -24,7 +24,7 @@ export default function Service() {
               portfolio: "portfolio-1",
               portfolioDesc: "portfolio-1",
               description:
-                "お客様の要望をヒアリングし、現状の問題点を考いだし、解決方法をご提案します。",
+                "お客様のご要望を丁寧にヒアリングし、現状の課題や潜在的なニーズを掘り下げて考察します。単なる解決策の提示にとどまらず、未来を見据えた最適なアプローチを提案し、お客様のビジョンを形にします。",
             },
             {
               icon: FiMousePointer,
@@ -32,7 +32,7 @@ export default function Service() {
               portfolio: "portfolio-2",
               portfolioDesc: "portfolio-2",
               description:
-                "ヒアリングに基づいたプランに沿って、デザインを作成します。",
+                "ヒアリングで得たインサイトを基に、洗練されたデザインを制作します。見た目の美しさだけでなく、使いやすさやブランドの個性を引き出し、ユーザーにとって直感的で魅力的な体験を提供するデザインを追求します。",
             },
             {
               icon: VscCode,
@@ -40,7 +40,7 @@ export default function Service() {
               portfolio: "portfolio-3",
               portfolioDesc: "portfolio-3",
               description:
-                "デザインの意図を理解し、動きや効果を適切に使用することでWebサイトの仕上がりは大きく変わります。",
+                "デザインの意図を深く理解し、動きや効果を駆使して、ただのWebサイトではなく「体験」を作り上げます。繊細な表現やパフォーマンスにこだわり、見る人が思わず引き込まれる仕上がりを目指します。",
             },
           ].map((service, index) => (
             <motion.div
@@ -54,7 +54,7 @@ export default function Service() {
               <service.icon className="w-14 h-14 md:w-16 md:h-16 text-gray-700 dark:text-gray-300" />
               <h3 className="section-subtitle">{service.title}</h3>
               <p className="section-text">{service.description}</p>
-              <motion.div
+              {/* <motion.div
                 key={"1"}
                 className="w-full bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
                 whileHover={{ scale: 1.05 }}
@@ -65,7 +65,7 @@ export default function Service() {
                   <h3 className="section-subtitle">{service.portfolio}</h3>
                   <p className="section-text">{service.portfolioDesc}</p>
                 </div>
-              </motion.div>
+              </motion.div> */}
             </motion.div>
           ))}
         </div>
