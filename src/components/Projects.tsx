@@ -1,17 +1,12 @@
 import ProjectCard from "@/components/parts/ProjectCard";
 import ProjectModal from "@/components/parts/ProjectModal";
-import { isLightMode } from "@/components/utils/util";
-import noImage from "@/images/noimage.png";
 import noImageGray from "@/images/noimageGray.png";
 import xlogo from "@/images/Xlogo.png";
 import { Project } from "@/types/project";
 import { AnimatePresence, motion } from "framer-motion";
-import { useTheme } from "next-themes";
 import { useState } from "react";
 
 export default function Projects() {
-  const { theme } = useTheme();
-
   const projects: Project[] = [
     {
       id: "1",
@@ -25,13 +20,13 @@ export default function Projects() {
       id: "2",
       title: "None",
       description: "None",
-      imageUrl: isLightMode(theme) ? noImageGray : noImage,
+      imageUrl: noImageGray,
     },
     {
       id: "3",
       title: "None",
       description: "None",
-      imageUrl: isLightMode(theme) ? noImageGray : noImage,
+      imageUrl: noImageGray,
     },
   ];
 
