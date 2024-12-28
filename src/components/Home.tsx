@@ -47,6 +47,7 @@ export default function Home() {
                   src={HeroImage}
                   alt="hero image."
                   className="w-full h-full object-cover"
+                  loading="eager"
                 />
               </div>
               <div className="relative">

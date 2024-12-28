@@ -38,6 +38,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           width={600}
           height={400}
           className="object-cover w-full h-full mb-4 rounded-lg bg-black"
+          loading="eager"
         />
         <h2 className="section-subtitle-reverse">{project.title}</h2>
         <p className="section-text-reverse">{project.description}</p>

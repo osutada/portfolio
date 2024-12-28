@@ -99,6 +99,7 @@ export default function About() {
                 src={aboutMeImg}
                 alt="aboutMe"
                 className="w-full h-full object-cover"
+                loading="eager"
               />
             </div>
           </motion.div>
