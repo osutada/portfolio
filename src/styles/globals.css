@@ -30,7 +30,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: myfont, Roboto, Helvetica, sans-serif;
+  font-family: Roboto, myfont, Helvetica, sans-serif;
 }
 
 /* 
