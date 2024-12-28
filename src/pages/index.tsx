@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import Section from "@/components/layout/Section";
 import ScrollTopButton from "@/components/parts/ScrollTopButton";
+import Projects from "@/components/Projects";
 import Service from "@/components/Service";
 import Skills from "@/components/Skills";
 
@@ -18,16 +19,19 @@ export default function Component() {
         <Section name="home" className="relative overflow-hidden">
           <Home />
         </Section>
-        <Section name="about" className="bg-white dark:bg-gray-900">
+        <Section name="about" className="section-backgrount-color">
           <About />
         </Section>
         <Section name="service">
           <Service />
         </Section>
-        <Section name="skills" className="bg-white dark:bg-gray-900">
+        <Section name="projects" className="section-backgrount-color">
+          <Projects />
+        </Section>
+        <Section name="skills">
           <Skills />
         </Section>
-        <Section name="contact">
+        <Section name="contact" className="section-backgrount-color">
           <Contact />
         </Section>
         <Footer />

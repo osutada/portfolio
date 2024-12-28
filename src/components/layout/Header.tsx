@@ -8,7 +8,14 @@ import { useEffect, useState } from "react";
 import { LuMenu, LuX } from "react-icons/lu";
 
 export default function Header() {
-  const sections = ["home", "about", "service", "skills", "contact"];
+  const sections = [
+    "home",
+    "about",
+    "service",
+    "skills",
+    "projects",
+    "contact",
+  ];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Prevent scroll when menu is open

@@ -40,11 +40,39 @@ body {
   @apply text-gray-800 dark:text-gray-200;
 }
 
+/*
+  セクション毎のタイトルカラーを反転させる
+*/
+.section-title-text-color-reverse {
+  @apply text-white dark:text-gray-900;
+}
+
+/*
+  セクション毎の背景色
+*/
+.section-backgrount-color {
+  @apply bg-white dark:bg-gray-900;
+}
+
+/*
+  セクション毎の背景色を反転させる
+*/
+.section-backgrount-color-reverse {
+  @apply bg-gray-900 dark:bg-white;
+}
+
 /* 
   セクション毎のタイトルに用いる共通クラス
 */
 .section-title {
   @apply text-4xl sm:text-5xl font-bold text-center mb-16 section-title-text-color;
+}
+
+/* 
+  セクション毎のタイトルを反転させる
+*/
+.section-title-reverse {
+  @apply text-4xl sm:text-5xl font-bold text-center mb-16 section-title-text-color-reverse;
 }
 
 /* 
@@ -55,10 +83,24 @@ body {
 }
 
 /* 
+  セクション毎のサブタイトルを反転させる
+*/
+.section-subtitle-reverse {
+  @apply text-lg sm:text-xl font-semibold section-title-text-color-reverse;
+}
+
+/* 
   セクション毎のテキストに用いる共通クラス
 */
 .section-text {
   @apply text-base sm:text-lg text-gray-600 dark:text-gray-400;
+}
+
+/* 
+  セクション毎のテキストを反転させる
+*/
+.section-text-reverse {
+  @apply text-base sm:text-lg text-gray-400 dark:text-gray-600;
 }
 
 /* 
