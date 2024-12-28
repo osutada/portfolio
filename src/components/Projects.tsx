@@ -1,35 +1,40 @@
 import ProjectCard from "@/components/parts/ProjectCard";
 import ProjectModal from "@/components/parts/ProjectModal";
+import { isLightMode } from "@/components/utils/util";
 import noImage from "@/images/noimage.png";
+import noImageGray from "@/images/noimageGray.png";
 import xlogo from "@/images/Xlogo.png";
 import { Project } from "@/types/project";
 import { AnimatePresence, motion } from "framer-motion";
+import { useTheme } from "next-themes";
 import { useState } from "react";
 
-const projects: Project[] = [
-  {
-    id: "1",
-    title: "AI_TweetBot",
-    description:
-      "OpenAI GPT-4o-mini powered Twitter bot that generates tweets based on user input.",
-    imageUrl: xlogo,
-    url: "https://x.com/osutada_x",
-  },
-  {
-    id: "2",
-    title: "None",
-    description: "None",
-    imageUrl: noImage,
-  },
-  {
-    id: "3",
-    title: "None",
-    description: "None",
-    imageUrl: noImage,
-  },
-];
-
 export default function Projects() {
+  const { theme } = useTheme();
+
+  const projects: Project[] = [
+    {
+      id: "1",
+      title: "AI_TweetBot",
+      description:
+        "OpenAI GPT-4o-mini powered Twitter bot that generates tweets based on user input.",
+      imageUrl: xlogo,
+      url: "https://x.com/osutada_x",
+    },
+    {
+      id: "2",
+      title: "None",
+      description: "None",
+      imageUrl: isLightMode(theme) ? noImageGray : noImage,
+    },
+    {
+      id: "3",
+      title: "None",
+      description: "None",
+      imageUrl: isLightMode(theme) ? noImageGray : noImage,
+    },
+  ];
+
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const openModal = (project: Project) => {
@@ -41,7 +46,7 @@ export default function Projects() {
   };
   return (
     <>
-      <div className="container m-5 px-4">
+      <div className="container m-6 px-4">
         <motion.h2
           className="section-title"
           initial={{ opacity: 0, y: 50 }}

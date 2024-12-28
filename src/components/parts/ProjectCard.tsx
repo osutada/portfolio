@@ -12,9 +12,9 @@ export default function ProjectCard({ project, onOpen }: ProjectCardProps) {
       <Image
         src={project.imageUrl}
         alt={project.title}
-        className="object-cover w-full h-70 bg-black"
+        className="object-cover w-full h-96 bg-black"
       />
-      <div className="p-4">
+      <div className="p-5">
         <h3 className="section-subtitle-reverse">{project.title}</h3>
       </div>
     </motion.div>

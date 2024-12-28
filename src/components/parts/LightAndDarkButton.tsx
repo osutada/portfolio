@@ -1,3 +1,4 @@
+import { isLightMode } from "@/components/utils/util";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
@@ -10,10 +11,6 @@ export default function LightAndDarkButton() {
   useEffect(() => {
     setMounted(true);
   }, []);
-
-  const isLightMode = (theme?: string): boolean => {
-    return theme === "light";
-  };
 
   const getToggleTheme = (theme?: string): string => {
     return isLightMode(theme) ? "dark" : "light";
