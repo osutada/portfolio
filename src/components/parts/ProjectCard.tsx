@@ -6,7 +6,7 @@ export default function ProjectCard({ project, onOpen }: ProjectCardProps) {
   return (
     <motion.div
       className="relative overflow-hidden cursor-pointer rounded-lg section-backgrount-color-reverse"
-      whileHover={{ scale: 1.06, transition: { duration: 0.2 } }}
+      whileHover={{ scale: 1.04 }}
       onClick={() => onOpen(project)}
     >
       <Image

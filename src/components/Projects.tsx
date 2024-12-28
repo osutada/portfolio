@@ -46,7 +46,7 @@ export default function Projects() {
   };
   return (
     <>
-      <div className="container m-6 px-4">
+      <div className="container m-6">
         <motion.h2
           className="section-title"
           initial={{ opacity: 0, y: 50 }}
