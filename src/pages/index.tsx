@@ -6,6 +6,7 @@ import Home from "@/components/Home";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import Section from "@/components/layout/Section";
+import ChatbotPopup from "@/components/parts/ChatBotPopUp";
 import ScrollTopButton from "@/components/parts/ScrollTopButton";
 import Projects from "@/components/Projects";
 import Service from "@/components/Service";
@@ -36,6 +37,7 @@ export default function Component() {
         </Section>
         <Footer />
         <ScrollTopButton />
+        <ChatbotPopup />
       </div>
     </>
   );
