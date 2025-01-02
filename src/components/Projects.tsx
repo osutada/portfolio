@@ -1,6 +1,7 @@
 import ProjectCard from "@/components/parts/ProjectCard";
 import ProjectModal from "@/components/parts/ProjectModal";
 import noImageGray from "@/images/noimageGray.png";
+import PlanMaker from "@/images/PlanMaker.png";
 import xlogo from "@/images/Xlogo.png";
 import { Project } from "@/types/project";
 import { AnimatePresence, motion } from "framer-motion";
@@ -18,9 +19,11 @@ export default function Projects() {
     },
     {
       id: "2",
-      title: "None",
-      description: "None",
-      imageUrl: noImageGray,
+      title: "PlanMaker",
+      description:
+        "Next.js, TailwindCSS, TypeScript, Shadcn/UI, Vercel, OpenAI",
+      imageUrl: PlanMaker,
+      url: "https://generate-plan-indol.vercel.app/",
     },
     {
       id: "3",
